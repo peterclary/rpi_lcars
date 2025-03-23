@@ -84,10 +84,10 @@ class ScreenMain(LcarsScreen):
         LcarsScreen.update(self, screenSurface, fpsClock)
 
     def handleEvents(self, event, fpsClock):
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.FINGERDOWN:
             self.beep1.play()
 
-        if event.type == pygame.MOUSEBUTTONUP:
+        if event.type == pygame.FINGERUP:
             return False
 
     def hideInfoText(self):

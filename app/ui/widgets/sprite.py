@@ -42,7 +42,7 @@ class LcarsWidget(pygame.sprite.DirtySprite):
             self.focussed = False
             return handled
         
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.FINGERDOWN:
             self.pressed_time = pygame.time.get_ticks()
             self.focussed = True
                 
@@ -54,7 +54,7 @@ class LcarsWidget(pygame.sprite.DirtySprite):
                     self.rect.left = event.pos[0]
                     self.dirty = 1            
 
-        if event.type == pygame.MOUSEBUTTONUP:
+        if event.type == pygame.FINGERUP:
             if self.handler:
                 self.handler(self, event, clock)
                 handled = True
@@ -84,7 +84,7 @@ class LcarsMoveToMouse(LcarsWidget):
         self.focussed = True
 
     def handleEvent(self, event, clock):
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.FINGERDOWN:
             # move sprite to clicked location using interpolator
             fps = clock.get_fps()
             x, y = event.pos
