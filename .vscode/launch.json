@@ -3,7 +3,8 @@
 	"configurations": [
 		{
 			"name": "Python",
-			"type": "python",
+			"cwd": "${fileDirname}",
+			"type": "debugpy",
 			"request": "launch",
 			"stopOnEntry": true,
 			"program": "${file}",
@@ -14,8 +15,22 @@
 			]
 		},
 		{
+			"name": "Debug LCARS",
+			"cwd": "app",
+			"type": "debugpy",
+			"request": "launch",
+			"stopOnEntry": false,
+			"program": "lcars.py",
+			"externalConsole": true,
+			"debugOptions": [
+				"WaitOnAbnormalExit",
+				"WaitOnNormalExit"
+			]
+		},
+		{
 			"name": "Python Console App",
-			"type": "python",
+			"cwd": "${fileDirname}",
+			"type": "debugpy",
 			"request": "launch",
 			"stopOnEntry": true,
 			"program": "${file}",
